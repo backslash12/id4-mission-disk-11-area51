@@ -1,6 +1,6 @@
 ID4 – MISSION DISK 11: AREA 51
 
-Playable offline recreation for Ubuntu
+Playable offline recreation for Browser
 
 =======================================
 
