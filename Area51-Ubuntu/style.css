@@ -1,0 +1,44 @@
+:root { color-scheme: dark; font-family: system-ui, sans-serif; background: #060709; color: #c3c8cc; }
+@font-face { font-family: 'Area Orbitron'; src: url('assets/fonts/orbitron-latin-900-normal.woff2') format('woff2'); font-style: normal; font-weight: 900; font-display: block; }
+@font-face { font-family: 'Area Courier'; src: url('assets/fonts/courier-prime-latin-700-normal.woff2') format('woff2'); font-style: normal; font-weight: 700; font-display: block; }
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100svh; display: grid; place-items: center; padding: 16px; }
+button { font: inherit; cursor: pointer; }
+[hidden] { display: none !important; }
+#game { width: fit-content; max-width: 100%; }
+#stage { width: 640px; height: 480px; position: relative; overflow: hidden; background: #000; }
+#screen { width: 100%; height: 100%; display: block; outline: none; image-rendering: auto; touch-action: manipulation; }
+#vector-text { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: hidden; }
+#vector-text .sci { font-family: 'Area Orbitron', sans-serif; font-weight: 900; dominant-baseline: alphabetic; }
+#vector-text .letter { font-family: 'Area Courier', monospace; font-weight: 700; }
+#commands, #choice { position: absolute; inset: 0; pointer-events: none; }
+#commands button { position: absolute; left: calc(var(--x) / 640 * 100%); top: calc(var(--y) / 480 * 100%); width: calc(var(--w) / 640 * 100%); height: calc(var(--h) / 480 * 100%); font-size: 0; padding: 0; border: 0; background: transparent; color: transparent; pointer-events: auto; }
+#commands button:disabled { cursor: wait; }
+#commands button:focus-visible, #choice button:focus-visible { outline: 1px dashed #fff; outline-offset: -1px; }
+#choice button { position: absolute; top: 68%; width: 24%; height: 19%; background: transparent; border: 0; pointer-events: auto; border-radius: 50%; }
+#try-again { left: 12%; } #pull-plug { left: 59%; }
+#loading, #error { position: absolute; inset: 0; display: grid; align-content: center; justify-items: center; padding: 35px; text-align: center; background: #090b13; }
+#loading { font-size: 25px; letter-spacing: .22em; color: #71ee1a; }
+#loading span { margin-top: 20px; font-size: 13px; color: #919ba5; letter-spacing: 0; }
+#error { overflow: auto; font-size: 14px; background: #16131b; }
+#error h1 { font-size: 20px; } #error p { max-width: 480px; }
+#error button { background: #b7ed77; border: 0; border-radius: 4px; color: #121a08; padding: 10px 16px; }
+footer { min-height: 46px; max-width: 100%; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: space-between; padding: 8px 0 0; font-size: 11px; }
+#status { color: #86919b; max-width: 390px; }
+.tools { display: flex; gap: 3px; flex-wrap: wrap; }
+.tools button { background: transparent; color: #aeb8c2; border: 1px solid transparent; border-radius: 4px; padding: 5px 7px; font-size: 11px; }
+.tools button:hover { background: #171d25; color: white; }
+.tools button:focus-visible { outline: 1px solid #7add38; }
+dialog { width: min(520px, calc(100vw - 32px)); max-height: calc(100svh - 40px); border: 1px solid #384350; border-radius: 8px; background: #11161d; color: #d5dee6; padding: 24px; font-size: 14px; line-height: 1.55; }
+dialog::backdrop { background: #000b; }
+dialog h1 { font-size: 20px; margin-top: 0; padding-right: 24px; }
+.close { float: right; background: transparent; border: 0; color: #b5c0cb; font-size: 26px; margin: -12px -10px 0 0; }
+table { border-collapse: collapse; width: 100%; margin: 18px 0; }
+td { padding: 5px 0; border-bottom: 1px solid #222c35; }
+td:first-child { width: 100px; } kbd { font: 12px ui-monospace, monospace; color: #9ce968; }
+details { background: #1b232b; padding: 10px 12px; border-radius: 4px; }
+summary { cursor: pointer; color: #d6e2d0; }
+.small { color: #8c99a5; font-size: 12px; }
+#game:fullscreen { width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column; background: #000; }
+#game:fullscreen footer { width: min(1280px, 100%); padding-inline: 12px; }
+@media (max-width: 680px) { body { padding: 8px; } footer { font-size: 10px; gap: 5px; } .tools button { font-size: 10px; padding: 5px; } }

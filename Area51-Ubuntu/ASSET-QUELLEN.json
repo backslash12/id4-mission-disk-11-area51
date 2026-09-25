@@ -1,0 +1,73 @@
+{
+  "source": "Independence Day ID4 - Mission Disk 11 Area 51 Playthrough.mp4",
+  "resolution": [
+    640,
+    480
+  ],
+  "fps": 30,
+  "clips": {
+    "lights-on": {
+      "source_start": 48.1,
+      "source_end": 50.8
+    },
+    "lights-off": {
+      "source_start": 258.4,
+      "source_end": 261.2
+    },
+    "raise": {
+      "source_start": 53.35,
+      "source_end": 62.65
+    },
+    "doors-open": {
+      "source_start": 149.0,
+      "source_end": 150.9
+    },
+    "load": {
+      "source_start": 154.4,
+      "source_end": 162.75
+    },
+    "load-fail": {
+      "source_start": 21.5,
+      "source_end": 29.0
+    },
+    "drain": {
+      "source_start": 248.4,
+      "source_end": 258.0
+    },
+    "fill": {
+      "source_start": 219.1,
+      "source_end": 228.8
+    },
+    "launch-open": {
+      "source_start": 165.5,
+      "source_end": 171.3
+    },
+    "launch-closed": {
+      "source_start": 65.7,
+      "source_end": 70.8
+    },
+    "launch-dark": {
+      "source_start": 264.4,
+      "source_end": 269.7
+    }
+  },
+  "derived": {
+    "lower": "reverse raise",
+    "doors-close": "reverse doors-open"
+  },
+  "notes": "Original decoded graphics from the user-supplied playthrough; video encoding VP9 CRF 12.",
+  "upgraded_output": {
+    "canvas_resolution": [
+      1280,
+      960
+    ],
+    "base_video_resolution": [
+      640,
+      480
+    ],
+    "static_processing": "2x Lanczos with mild edge sharpening; scene backgrounds remain derived from the user's video",
+    "motion_processing": "60 fps via bidirectional motion-compensated optical-flow interpolation from 30 fps original clips",
+    "text_rendering": "Resolution-independent SVG with bundled Orbitron 900 and Courier Prime 700 WOFF2 fonts, transcribed from the supplied video. Includes commands, reports, prompts and credits; font licenses in assets/fonts/.",
+    "actual_new_source_detail": false
+  }
+}

@@ -1,0 +1,118 @@
+ID4 – MISSION DISK 11: AREA 51
+Spielbare Offline-Nachbildung für Ubuntu
+=======================================
+
+STARTEN
+
+1. Die ZIP-Datei vollständig entpacken.
+2. Im entpackten Ordner index.html mit Firefox oder Chromium öffnen.
+
+Alternativ im Terminal dieses Ordners:
+
+    bash Start.sh
+
+Das Spiel läuft vollständig offline. Ein vorhandener Browser genügt.
+Keine Installation, kein Wine, keine Windows-EXE und kein Server erforderlich.
+Der Ordner assets muss neben index.html liegen bleiben.
+
+SPIELEN
+
+Die Übertragung lesen und ins Bild klicken oder Enter drücken.
+Danach die Originalbefehle am unteren Bildrand anklicken.
+Private Jones führt jeweils einen Befehl aus. Während einer Animation warten.
+
+LIGHTS ON/OFF   Licht einschalten / ausschalten
+RAISE/LOWER SHIP   Schiff anheben / absenken
+OPEN/CLOSE DOORS   Außentor öffnen / schließen
+LOAD ORDNANCE   Munition laden
+DRAIN/FILL TANK   Alien-Behälter leeren / füllen
+LAUNCH SHIP   Start auslösen
+RESTART   Neue Mission
+QUIT   Original-Abspann anzeigen
+
+Tastatur: L = Licht, U = Hebebühne, O = Tor, A = Munition,
+T = Tank, Enter = Start / Text weiter, R = Neustart, Q = Abspann.
+F = Vollbild, M = Ton ein/aus, H = Hilfe.
+Bei einem fokussierten Bildschirmknopf bedient Enter diesen Knopf.
+
+Bei Übertragungen: erster Klick beendet gegebenenfalls das Scrollen,
+der nächste Klick führt weiter. Nach einem Ergebnis: grün = erneut spielen,
+rot = Abspann. Im Abspann führt ein Klick zurück zum Anfang.
+
+Das Bild passt sich beim Start ans Fenster an. "Pixelgröße" wählt nach
+Möglichkeit eine ganzzahlige Vergrößerung; mit "Vergrößern" kommst du
+zurück zur Fenstergröße. Die Hintergrundgrafik besitzt 1280 × 960 Pixel.
+Alle Spielbefehle, Übertragungen, Auswahltexte und Abspanntexte werden
+darüber als echte skalierbare Schrift gesetzt. Diese Schrift bleibt auch
+auf einem 4K-Bildschirm scharf; Vollbild mit F einschalten.
+Beim Tabwechsel und beim Öffnen der Hilfe pausiert das Spiel.
+Mit "Weiter" bzw. durch Schließen der Hilfe fortsetzen.
+Zum vollständigen Beenden das Browserfenster schließen.
+
+WAS DIESE FASSUNG ENTHÄLT
+
+Eine neu geschriebene Spiellogik mit den aus deinem hochgeladenen
+Playthrough gewonnenen Originalgrafiken, Animationen, Tonsequenzen,
+Übertragungen und dem Original-Abspann. Die alten, unscharfen Buchstaben
+wurden anhand der Vorlage mit lokalen Vektorschriften neu gesetzt.
+Die Bildgestaltung der Szenen stammt weiterhin aus dem Originalvideo.
+
+Die Videosequenzen dienen als Animationsebenen. Licht, Tank, Hebebühne,
+Tor und Munitionsstatus werden unabhängig verwaltet. Deine Befehle bestimmen
+die Reihenfolge und den Ausgang der Mission; es gibt keinen linearen
+Filmablauf als Spielersatz.
+
+Enthalten sind der erfolgreiche Start und die vier im Video gezeigten
+Fehlversuche: Munition bei abgesenktem Schiff laden, bei geschlossenem Tor
+starten, ohne Munition starten und im Dunkeln starten.
+
+GRENZEN DER REKONSTRUKTION
+
+Die ursprüngliche AREA51.EXE und ihr Quellcode sind nicht Bestandteil
+dieser Fassung. Die Vorlage ist das hochgeladene Video, daher kann die
+Fassung keine vollständige 1:1-Übereinstimmung aller unbekannten Original-
+Spielregeln oder der unkomprimierten Originalpixel garantieren.
+
+Im Video nicht gezeigte Gegenbewegungen (Bühne senken, Tor schließen)
+verwenden abgeleitete Rückwärtsanimationen. Zusätzliche Aktionen im Dunkeln
+werden aus den hellen Animationen abgedunkelt. Der unbeobachtete Start bei
+abgesenktem Schiff wird mit einem Hinweis abgelehnt. Für diesen Fall wurde
+keine angeblich originale Fehlermeldung erfunden.
+
+Die genaue Liste der Quellsequenzen steht in ASSET-QUELLEN.json.
+Die HD-Fassung schärft und vergrößert die Szenengrafiken auf 1280 × 960.
+Bewegte Szenen laufen durch berechnete Zwischenbilder mit 60 statt 30
+Bildern pro Sekunde. Die Vorlage enthält keine zusätzlichen Bilddetails
+oberhalb ihrer 640 × 480 Pixel. Die optische Flussberechnung kann bei
+schnell bewegten Objekten leichte Zwischenbild-Artefakte erzeugen.
+Die 4K-Schärfe betrifft die neu gesetzte Schrift, nicht die ursprünglichen
+Grafikdetails im Video. Das Schriftbild ist eine lesbare Annäherung an
+die Vorlage, da deren unkomprimierte Originalschrift nicht vorliegt.
+Originalspiel: ID4 Mission Disk 11 / Area 51, 1996, Trendmasters.
+Die im Original gezeigten Urhebervermerke bleiben in Grafik und Abspann
+erhalten. Diese Nachbildung ist keine offizielle Neuveröffentlichung.
+
+DATEIEN
+
+index.html          Spiel öffnen
+Start.sh            Ubuntu-Starter
+game.js             Darstellung, Eingabe, Animationen und Ton
+typography.js       Vektorbeschriftungen und Übertragungen
+rules.js            Spielzustand und Regeln
+style.css           Darstellung des Spielfensters
+assets/             Alle lokalen Grafiken, Schriften, Ton-/Animationsdateien
+ASSET-QUELLEN.json   Herkunft der verwendeten Bildsequenzen
+PRUEFUNG.txt        Zusammenfassung der durchgeführten Tests
+
+BEI PROBLEMEN
+
+Nicht direkt aus der ZIP-Datei starten, sondern zuerst alles entpacken.
+Bei einer Fehlermeldung index.html ausdrücklich mit Firefox oder Chromium
+öffnen. Für Start.sh ist "bash Start.sh" ausreichend; eine fehlende
+Ausführungsberechtigung verhindert diesen Startweg nicht.
+Bei fehlendem Ton "Ton an" wählen und einmal ins Spielfeld klicken.
+
+LÖSUNG (SPOILER)
+
+LIGHTS ON → RAISE SHIP → OPEN DOORS → LOAD ORDNANCE → LAUNCH SHIP.
+Der große Behälter links enthält einen Alien; er ist kein Treibstofftank.

@@ -1,0 +1,52 @@
+FUNKTIONSPRÜFUNG
+===============
+
+Prüfumgebung: Ubuntu 24.04, Chromium 153.0.8010.0, lokaler file://-Aufruf.
+Der Browser lief automatisiert ohne sichtbares Desktopfenster. Die
+Spielgrafik wurde zusätzlich anhand der gerenderten Screenshots geprüft.
+Firefox und dein konkretes Ubuntu-System wurden nicht separat getestet.
+
+Erfolgreich geprüft:
+
+- Start aus index.html mit vollständig lokalen Dateien.
+- Native HD-Ausgabe mit 1280 × 960 Pixeln und Anpassung an das Browserfenster.
+- Spielbefehle, Übertragungen, Auswahlbildschirm und Abspann als skalierbarer
+  SVG-Text; beide mitgelieferten WOFF2-Schriften werden unter file:// geladen.
+- UHD-Fenster 3840 × 2160: Spielfeld 2760 × 2070 Pixel, Text als Vektor
+  darüber gerendert. Screenshots auf Lesbarkeit und Kanten geprüft.
+- Alle Erfolgsmeldungen und vier Fehlermeldungen bleiben innerhalb der
+  Textfläche; keine alten Rasterbeschriftungen werden im Spiel geladen.
+- Alle 13 Animationsdateien: 60 Bilder pro Sekunde, VP9-Bild/Opus-Ton,
+  Abweichung der Spielzeit gegenüber der Vorlage unter 0,05 Sekunden.
+- Beim Anheben des Schiffs sichtbare zusätzliche Zwischenbilder und kleinere
+  Bildsprünge; die Ausgangsaufnahme selbst hatte 30 Bilder pro Sekunde.
+- Licht ein/aus, Schiff heben/senken, Außentor öffnen/schließen.
+- Tank leeren und wieder füllen bei offenem Tor und angehobenem Schiff.
+- Unabhängigkeit der Zustände von Tank, Licht, Schiff, Tor und Munition.
+- Erfolgreiche Startsequenz und Original-Erfolgsmeldung.
+- Fehlerfall: Munition bei abgesenktem Schiff laden.
+- Fehlerfall: Start bei geschlossenem Außentor.
+- Fehlerfall: Start ohne Munition.
+- Fehlerfall: Start im Dunkeln.
+- Neustart nach einem Ergebnis; vollständiges Zurücksetzen der Zustände.
+- Neustart während einer laufenden Animation; kein nachträglicher Einfluss
+  der abgebrochenen Animation auf die neue Mission.
+- Weitere Befehle während einer laufenden Aktion gesperrt.
+- Hilfe öffnet sich, pausiert und setzt die Animation anschließend fort.
+- Ton ein- und ausschaltbar.
+- Vollbild betreten und verlassen.
+- Kleine Fenster: Spielfeld bleibt im Fenster und behält das Seitenverhältnis.
+- Beenden zeigt den Original-Abspann; Rückkehr zum Missionsanfang möglich.
+- Keine externen Netzwerkanfragen und keine JavaScript-Ausnahmen bei diesen
+  Abläufen.
+- Start.sh: Syntax geprüft; Start aus einem anderen Arbeitsverzeichnis
+  sowie aus Ordnernamen mit Leerzeichen, Umlauten, # und $ geprüft.
+
+Die HD-Grafik und die ersten Licht- und Hebebühnenanimationen wurden mit
+normaler Abspielgeschwindigkeit geprüft. Für die längeren automatisierten
+Zustandsprüfungen wurde ausschließlich die Mediengeschwindigkeit im
+Testbrowser erhöht; Spiellogik und Dateien wurden dafür nicht verändert.
+
+Die visuelle Vorlage ist der vom Nutzer hochgeladene Playthrough.
+Diese Prüfungen bestätigen die oben aufgeführten rekonstruierten Abläufe,
+keine vollständige Gleichheit mit allen Regeln der ursprünglichen EXE.
